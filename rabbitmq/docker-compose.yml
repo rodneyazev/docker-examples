@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: "rabbitmq"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    ports:
+        # AMQP protocol port
+        - "5672:5672"
+        # HTTP management UI
+        - "15672:15672"
+    volumes:
+        - ~/data/rabbitmq:/var/lib/rabbitmq
+        - ~/data/rabbitmq/log/:/var/log/rabbitmq

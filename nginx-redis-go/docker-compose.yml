@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+  redis:
+    image: redis:alpine
+    ports:
+      - "5432:5432"
+  webservergo:
+    build: .
+    ports:
+      - "8081:8080"
