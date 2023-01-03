@@ -3,4 +3,4 @@ Here you will find examples of docker containers. They help me when I am coding 
 
 *If you need to know about names or passwords, you will find them in the .env files.*
 
-Contact me if you face any trouble.
+Do not hesitate to contact me if you face any trouble.
