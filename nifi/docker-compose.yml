@@ -4,6 +4,7 @@ services:
     user: root
     image: apache/nifi:latest
     container_name: nifi
+    hostname: nifi
     ports:
       - "9090:8181"
     environment:
@@ -16,3 +17,11 @@ services:
       - /home/votc/data/nifi/logs:/opt/nifi/nifi-current/logs
       - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
       - ./postgresql-42.5.1.jar:/opt/nifi/nifi-current/lib/postgresql-42.5.1.jar
+    networks:
+      - my-network
+
+networks:
+  my-network:
+      name: my-network
+
+# docker network create my-network
