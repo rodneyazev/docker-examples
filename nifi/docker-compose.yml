@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   nifi:
+    user: root
     image: apache/nifi:latest
     container_name: nifi
     ports:
@@ -9,3 +10,8 @@ services:
       NIFI_WEB_HTTP_PORT: 8181
     volumes:
       - /home/votc/data/nifi/conf:/opt/nifi/nifi-current-conf
+      - /home/votc/data/nifi/content:/opt/nifi/nifi-current/content
+      - /home/votc/data/nifi/db:/opt/nifi/nifi-current/db
+      - /home/votc/data/nifi/flowfile:/opt/nifi/nifi-current/flowfile
+      - /home/votc/data/nifi/state:/opt/nifi/nifi-current/state
+      - /home/votc/data/nifi/logs:/opt/nifi/nifi-current/logs
