@@ -1,0 +1,5 @@
+Database Connection URL = jdbc:postgresql://postgres:5432/postgres
+Database Driver Class Name = org.postgresql.Driver
+Database Driver Location = /opt/nifi/nifi-current/lib/
+Database User = postgres
+Password = postgres

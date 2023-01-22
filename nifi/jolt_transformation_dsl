@@ -1,0 +1,12 @@
+[{
+   "operation":"shift",
+   "spec": {
+      "id":"id",
+      "location_id":"location_id",
+      "address_1":"address",
+      "city":"city",
+      "state_province":"state_province",
+      "postal_code":"postal_code",
+      "country":"country"
+    }
+}]
