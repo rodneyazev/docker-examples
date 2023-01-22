@@ -10,11 +10,10 @@ services:
     environment:
       NIFI_WEB_HTTP_PORT: 8181
     volumes:
-      - /home/votc/data/nifi/conf:/opt/nifi/nifi-current-conf
-      - /home/votc/data/nifi/db:/opt/nifi/nifi-current/db
-      - /home/votc/data/nifi/flowfile:/opt/nifi/nifi-current/flowfile
-      - /home/votc/data/nifi/state:/opt/nifi/nifi-current/state
-      - /home/votc/data/nifi/logs:/opt/nifi/nifi-current/logs
+      - ~/data/nifi/nifi-current/db:/opt/nifi/nifi-current/db
+      - ~/data/nifi/nifi-current/flowfile:/opt/nifi/nifi-current/flowfile
+      - ~/data/nifi/nifi-current/state:/opt/nifi/nifi-current/state
+      - ~/data/nifi/nifi-current/logs:/opt/nifi/nifi-current/logs
       - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
       - ./postgresql-42.5.1.jar:/opt/nifi/nifi-current/lib/postgresql-42.5.1.jar
     networks:
