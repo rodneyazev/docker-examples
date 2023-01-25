@@ -11,3 +11,11 @@ services:
       - "27017:27017"
     volumes:
       - ~/data/mongo:/data/db
+    networks:
+      - my-network
+networks:
+  my-network:
+      name: my-network
+
+# docker network create my-network
+# localhost == host.docker.internal
