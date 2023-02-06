@@ -3,8 +3,8 @@ services:
   nifi:
     user: root
     image: apache/nifi:latest
-    container_name: nifi
-    hostname: nifi
+    container_name: "nifi"
+    hostname: "nifi"
     ports:
       - "9090:8181"
       # - "8443:8443"
@@ -24,8 +24,8 @@ services:
       - my-network
   nifi-registry:
     image: apache/nifi-registry:latest
-    container_name: nifi-registry
-    hostname: nifi-registry
+    container_name: "nifi-registry"
+    hostname: "nifi-registry"
     ports:
       - "19090:18080"
     environment:

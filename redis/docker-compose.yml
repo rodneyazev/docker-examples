@@ -3,5 +3,6 @@ services:
   redis:
     image: redis:bullseye
     container_name: "redis"
+    hostname: "redis"
     ports:
       - "6379:6379"

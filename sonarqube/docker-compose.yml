@@ -3,6 +3,7 @@ services:
   sonarqube:
     image: sonarqube:community
     container_name: "sonarqube"
+    hostname: "sonarqube"
     depends_on:
       - db
     environment:
@@ -18,6 +19,7 @@ services:
   db:
     image: postgres:13
     container_name: "postgres"
+    hostname: "postgres"
     environment:
       POSTGRES_USER: ${POSTGRES_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

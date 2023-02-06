@@ -3,6 +3,7 @@ services:
   kafdrop:
     image: obsidiandynamics/kafdrop
     container_name: "kafdrop"
+    hostname: "kafdrop"
     ports:
       - "9000:9000"
     environment:
@@ -15,6 +16,7 @@ services:
   kafka:
     image: obsidiandynamics/kafka
     container_name: "kafka"
+    hostname: "kafka"
     ports:
       - "2181:2181"
       - "9092:9092"
