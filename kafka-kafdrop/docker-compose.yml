@@ -11,6 +11,7 @@ services:
     networks:
       - my-network
     depends_on:
+      - kafka
   kafka:
     image: obsidiandynamics/kafka
     container_name: "kafka"
