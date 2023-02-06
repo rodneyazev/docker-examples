@@ -35,6 +35,8 @@ services:
       - ~/data/nifi-registry/flow_storage:/opt/nifi-registry/flow_storage
     networks:
       - my-network
+    depends_on:
+      - nifi
 networks:
   my-network:
       name: my-network

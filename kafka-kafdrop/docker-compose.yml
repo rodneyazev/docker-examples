@@ -8,10 +8,9 @@ services:
     environment:
       KAFKA_BROKERCONNECT: "kafka:29092"
       JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
-    depends_on:
-      - "kafka"
     networks:
       - my-network
+    depends_on:
   kafka:
     image: obsidiandynamics/kafka
     container_name: "kafka"
