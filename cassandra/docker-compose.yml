@@ -7,6 +7,8 @@ services:
     ports:
       - "9042:9042"
     volumes:
-      - ~/data/cassandra:/var/lib/cassandra
+      - cassandra:/var/lib/cassandra
     environment:
       CASSANDRA_CLUSTER_NAME: "cassandra"
+volumes:
+  cassandra:

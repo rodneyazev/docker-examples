@@ -14,25 +14,31 @@ services:
       # SINGLE_USER_CREDENTIALS_USERNAME: admin
       # SINGLE_USER_CREDENTIALS_PASSWORD: admin
     volumes:
-      - ~/data/nifi/nifi-current/database_repository:/opt/nifi/nifi-current/database_repository
-      - ~/data/nifi/nifi-current/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
-      - ~/data/nifi/nifi-current/content_repository:/opt/nifi/nifi-current/content_repository
-      - ~/data/nifi/nifi-current/provenance_repository:/opt/nifi/nifi-current/provenance_repository
-      - ~/data/nifi/nifi-current/state:/opt/nifi/nifi-current/state
-      - ~/data/nifi/nifi-current/logs:/opt/nifi/nifi-current/logs
-      - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
+      - database_repository:/opt/nifi/nifi-current/database_repository
+      - flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - content_repository:/opt/nifi/nifi-current/content_repository
+      - provenance_repository:/opt/nifi/nifi-current/provenance_repository
+      - state:/opt/nifi/nifi-current/state
+      - logs:/opt/nifi/nifi-current/logs
+      - conf:/opt/nifi/nifi-current/conf
+      # For PostgreSQL
       - ./postgresql-42.5.1.jar:/opt/nifi/nifi-current/lib/postgresql-42.5.1.jar
-      #- ~/data/nifi/nifi-current/conf:/opt/nifi/nifi-current/conf
-      #
-      # Just uncomment the line above after persist NiFi backup files, copying /conf directory from the container to your local directory, running the following command in this case:
-      #
-      # sudo docker cp nifi:/opt/nifi/nifi-current/ ~/data/nifi/nifi-current/
-      #
+      # For my personal ETL flow practice
+      - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
     networks:
       - my-network
 networks:
   my-network:
       name: my-network
+
+volumes:
+  database_repository:
+  flowfile_repository:
+  content_repository:
+  provenance_repository:
+  state:
+  logs:
+  conf:
 
 # docker network create my-network
 # localhost == host.docker.internal

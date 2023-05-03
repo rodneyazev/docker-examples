@@ -9,6 +9,15 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ~/data/jenkins:/var/jenkins_home
+      - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
+
+volumes:
+  jenkins_home:
+
+# Run the command below to get the first access Jenkins Password
+#
+# docker exec -it jenkins /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+#
+#################################################################
