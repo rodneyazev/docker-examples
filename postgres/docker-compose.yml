@@ -12,7 +12,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ~/data/postgres:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
+      #- ~/data/postgres:/var/lib/postgresql/data
     networks:
       - my-network
   pgadmin:
@@ -30,6 +31,9 @@ services:
 networks:
   my-network:
       name: my-network
+
+volumes:
+  db:
 
 # docker network create my-network
 # localhost == host.docker.internal

@@ -17,4 +17,3 @@ services:
       - ~/data/mysql/db/init.sql:/docker-entrypoint-initdb.d/init.sql
 volumes:
   db:
-    driver: local
