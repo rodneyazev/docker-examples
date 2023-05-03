@@ -14,29 +14,22 @@ services:
       # SINGLE_USER_CREDENTIALS_USERNAME: admin
       # SINGLE_USER_CREDENTIALS_PASSWORD: admin
     volumes:
-      - ~/data/nifi/nifi-current/db:/opt/nifi/nifi-current/db
-      - ~/data/nifi/nifi-current/flowfile:/opt/nifi/nifi-current/flowfile
+      - ~/data/nifi/nifi-current/database_repository:/opt/nifi/nifi-current/database_repository
+      - ~/data/nifi/nifi-current/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - ~/data/nifi/nifi-current/content_repository:/opt/nifi/nifi-current/content_repository
+      - ~/data/nifi/nifi-current/provenance_repository:/opt/nifi/nifi-current/provenance_repository
       - ~/data/nifi/nifi-current/state:/opt/nifi/nifi-current/state
       - ~/data/nifi/nifi-current/logs:/opt/nifi/nifi-current/logs
       - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
       - ./postgresql-42.5.1.jar:/opt/nifi/nifi-current/lib/postgresql-42.5.1.jar
+      #- ~/data/nifi/nifi-current/conf:/opt/nifi/nifi-current/conf
+      #
+      # Just uncomment the line above after persist NiFi backup files, copying /conf directory from the container to your local directory, running the following command in this case:
+      #
+      # sudo docker cp nifi:/opt/nifi/nifi-current/ ~/data/nifi/nifi-current/
+      #
     networks:
       - my-network
-  nifi-registry:
-    image: apache/nifi-registry:latest
-    container_name: "nifi-registry"
-    hostname: "nifi-registry"
-    ports:
-      - "19090:18080"
-    environment:
-      NIFI_REGISTRY_WEB_HTTP_PORT: "18080"
-    volumes:
-      - ~/data/nifi-registry/database:/opt/nifi-registry/database
-      - ~/data/nifi-registry/flow_storage:/opt/nifi-registry/flow_storage
-    networks:
-      - my-network
-    depends_on:
-      - nifi
 networks:
   my-network:
       name: my-network
