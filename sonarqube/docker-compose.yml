@@ -24,6 +24,9 @@ services:
       POSTGRES_USER: ${POSTGRES_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+    # Exposing port to host
+    ports:
+      - "5432:5432"
     volumes:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
@@ -33,3 +36,7 @@ volumes:
   sonarqube_logs:
   postgresql:
   postgresql_data:
+
+
+# Need to increase vm.max_map count. Run as root / sudo:
+# sudo sysctl -w vm.max_map_count=262144
