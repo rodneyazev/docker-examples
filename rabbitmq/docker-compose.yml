@@ -13,5 +13,9 @@ services:
         # HTTP management UI
         - "15672:15672"
     volumes:
-        - ~/data/rabbitmq:/var/lib/rabbitmq
-        - ~/data/rabbitmq/log/:/var/log/rabbitmq
+        - data:/var/lib/rabbitmq
+        - log:/var/log/rabbitmq
+
+volumes:
+  data:
+  log:
