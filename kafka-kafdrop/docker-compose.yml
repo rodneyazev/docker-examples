@@ -5,7 +5,7 @@ services:
     container_name: "kafdrop"
     hostname: "kafdrop"
     ports:
-      - "9000:9000"
+      - "9090:9000"
     environment:
       KAFKA_BROKERCONNECT: "kafka:29092"
       JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
