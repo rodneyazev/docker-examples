@@ -6,3 +6,8 @@ services:
     hostname: "redis"
     ports:
       - "6379:6379"
+    volumes:
+      - cache:/data
+
+volumes:
+  cache:
