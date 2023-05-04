@@ -11,9 +11,9 @@ services:
       SONAR_JDBC_USERNAME: ${SONAR_USERNAME}
       SONAR_JDBC_PASSWORD: ${SONAR_PASSWORD}
     volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
+      - data:/opt/sonarqube/data
+      - extensions:/opt/sonarqube/extensions
+      - logs:/opt/sonarqube/logs
     ports:
       - "9000:9000"
   db:
@@ -28,14 +28,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
+      - db:/var/lib/postgresql
 volumes:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
-  postgresql:
-  postgresql_data:
+  data:
+  extensions:
+  logs:
+  db:
 
 
 # Need to increase vm.max_map count. Run as root / sudo:

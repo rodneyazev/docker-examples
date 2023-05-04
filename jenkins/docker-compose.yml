@@ -9,12 +9,12 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - jenkins_home:/var/jenkins_home
+      - home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
 
 volumes:
-  jenkins_home:
+  home:
 
 # Run the command below to get the first access Jenkins Password
 #

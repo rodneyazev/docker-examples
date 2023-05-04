@@ -11,8 +11,8 @@ services:
     ports:
       - 1521:1521
     volumes:
-      - oracle-data:/opt/oracle/oradata
-      - oracle-backup:/opt/oracle/backup
+      - data:/opt/oracle/oradata
+      - backup:/opt/oracle/backup
     healthcheck:
       test: ["CMD", "sqlplus", "-L", "sys/Oracle_123@//localhost:1521/ORCLCDB as sysdba", "@healthcheck.sql"]
       interval: 30s
@@ -20,5 +20,5 @@ services:
       retries: 5
 
 volumes:
-  oracle-data:
-  oracle-backup:
+  data:
+  backup:
