@@ -8,6 +8,7 @@ services:
       - db
     environment:
       SONAR_JDBC_URL: jdbc:postgresql://db:5432/sonar
+      # The first default user/password is admin/admin
       SONAR_JDBC_USERNAME: ${SONAR_USERNAME}
       SONAR_JDBC_PASSWORD: ${SONAR_PASSWORD}
     volumes:
