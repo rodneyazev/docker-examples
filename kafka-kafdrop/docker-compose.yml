@@ -34,6 +34,3 @@ services:
 networks:
   my-network:
       name: my-network
-
-# docker network create my-network
-# localhost == host.docker.internal

@@ -21,9 +21,9 @@ services:
       - state:/opt/nifi/nifi-current/state
       - logs:/opt/nifi/nifi-current/logs
       - conf:/opt/nifi/nifi-current/conf
-      # For PostgreSQL
+      # For PostgreSQL use. You can remove it.
       - ./postgresql-42.5.1.jar:/opt/nifi/nifi-current/lib/postgresql-42.5.1.jar
-      # For my personal ETL flow practice
+      # For my personal ETL flow practice. You can remove it.
       - ./addresses.csv:/opt/nifi/nifi-current/content/addresses.csv
     networks:
       - my-network
@@ -39,6 +39,3 @@ volumes:
   state:
   logs:
   conf:
-
-# docker network create my-network
-# localhost == host.docker.internal

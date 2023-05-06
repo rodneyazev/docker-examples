@@ -2,4 +2,4 @@
 
 sudo sysctl -w vm.max_map_count=262144
 
-P.S.: You can add **vm.max_map_count=262144** in config file /etc/sysctl.conf permanently if you wish
+P.S.: If do not work, you can add **vm.max_map_count=262144** in config file /etc/sysctl.conf permanently if you wish.

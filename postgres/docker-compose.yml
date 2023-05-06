@@ -34,6 +34,3 @@ networks:
 
 volumes:
   db:
-
-# docker network create my-network
-# localhost == host.docker.internal
