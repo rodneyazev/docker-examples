@@ -11,7 +11,7 @@ Do not hesitate to contact me if you face any trouble.
 
 docker network create my-network
 
-## How access:
+## How access database via PGAdmin, etc:
 
 localhost == host.docker.internal
 
