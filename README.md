@@ -5,8 +5,6 @@ If you need to know about **username or password**, you will find them in the **
 
 Do not hesitate to contact me if you face any trouble.
 
-# Some configuration
-
 ## Create a network for internal communication
 
 docker network create my-network
