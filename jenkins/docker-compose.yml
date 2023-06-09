@@ -12,6 +12,7 @@ services:
       - home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
+    restart: unless-stopped
 
 volumes:
   home:
