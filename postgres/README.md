@@ -1,3 +1,3 @@
 ## How access database via PGAdmin, etc:
 
-localhost == host.docker.internal
+Use host.docker.internal instead of localhost
