@@ -9,10 +9,6 @@ Do not hesitate to contact me if you face any trouble.
 
 docker network create my-network
 
-## How access database via PGAdmin, etc:
-
-localhost == host.docker.internal
-
 ## Some containers need the following configuration (e.g.: Sonarqube):
 
 sudo sysctl -w vm.max_map_count=262144
