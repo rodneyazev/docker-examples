@@ -7,3 +7,7 @@ P.S.: If do not work, you can add **vm.max_map_count=262144** in config file /et
 ## How access database via PGAdmin, etc:
 
 localhost == host.docker.internal
+
+## First login user/password is:
+
+admin/admin
