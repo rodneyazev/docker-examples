@@ -1,1 +1,1 @@
-To connect, you need to set in Authentication, user + password, and click on TLS/SSL and change it to Off
+To connect, you need to set in Authentication, user + password. Click on TLS/SSL and change it to Off, if necessary.
