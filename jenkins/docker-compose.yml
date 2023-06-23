@@ -8,6 +8,8 @@ services:
     user: root
     ports:
       - "8080:8080"
+      # Exposing 8085 port for Spring application e.g.
+      - "8085:8085"
     volumes:
       - home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
