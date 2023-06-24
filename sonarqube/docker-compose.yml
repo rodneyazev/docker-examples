@@ -17,6 +17,8 @@ services:
       - logs:/opt/sonarqube/logs
     ports:
       - "9000:9000"
+    networks:
+      - my-network
   db:
     image: postgres:13
     container_name: "postgres"
@@ -28,6 +30,8 @@ services:
     # Exposing port to host
     ports:
       - "5432:5432"
+    networks:
+      - my-network
     volumes:
       - db:/var/lib/postgresql
   pgadmin:
@@ -39,7 +43,11 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
       - "5050:80"
-
+    networks:
+      - my-network
+networks:
+  my-network:
+      name: my-network
 volumes:
   data:
   extensions:

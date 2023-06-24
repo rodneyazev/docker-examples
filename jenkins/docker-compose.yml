@@ -15,6 +15,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /usr/local/bin/docker:/usr/local/bin/docker
     restart: unless-stopped
-
+    networks:
+      - my-network
+networks:
+  my-network:
+      name: my-network
 volumes:
   home:
