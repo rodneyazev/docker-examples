@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   openldap:
-    image: docker.io/bitnami/openldap:latest
+    image: bitnami/openldap
     container_name: "openldap"
     hostname: "openldap"
     privileged: true
@@ -19,8 +19,7 @@ services:
       - LDAP_DOMAIN=example.com
       - LDAP_TLS=no
     volumes:
-      - openldap_data:/bitnami/openldap/data
-    restart: unless-stopped
+      - 'openldap_data:/bitnami/openldap/data'
 
 volumes:
   openldap_data:
