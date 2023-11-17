@@ -51,4 +51,4 @@ docker exec openldap ldapwhoami -Y EXTERNAL -H ldapi:/// -Q
 <br>
 Commands credits: Baeldung (Thank you)
 
-Link: https://www.baeldung.com/linux/ldap-command-line-authentication
+https://www.baeldung.com/linux/ldap-command-line-authentication
