@@ -11,7 +11,7 @@ OpenLDAP docker example
 docker exec openldap ldapadd -v -H ldap://localhost -c -D "cn=admin,dc=example,dc=com" -w admin -f /bitnami/openldap/ldif/users.ldif
 
 ```
-<pre><center><em><strong>Username:</strong> ben  &nbsp; &nbsp; &nbsp;    <strong>Password:</strong> benspassword </em>
+<pre><em><strong>Username:</strong> ben     <strong>Password:</strong> benspassword </em>
 </pre>
 
 <br>
