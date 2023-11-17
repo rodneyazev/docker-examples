@@ -4,6 +4,14 @@ OpenLDAP docker example
 
 ## OpenLDAP - Useful Commands
 
+- Add new user / Import users.ldif
+
+```bash
+
+docker exec openldap ldapadd -v -H ldap://localhost -c -D "cn=admin,dc=example,dc=com" -w admin -f /bitnami/openldap/ldif/users.ldif
+
+```
+
 - Using Anonymous Bind
 
 ```bash

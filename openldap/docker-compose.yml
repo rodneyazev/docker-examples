@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   openldap:
-    image: bitnami/openldap
+    image: bitnami/openldap:latest
     container_name: "openldap"
     hostname: "openldap"
     privileged: true
@@ -24,6 +24,7 @@ services:
       #
     volumes:
       - 'openldap_data:/bitnami/openldap/data'
+      - './ldif:/bitnami/openldap/ldif'
   phpldapadmin:
     image: osixia/phpldapadmin:latest
     container_name: phpldapadmin

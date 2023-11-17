@@ -1,0 +1,33 @@
+# extended LDIF
+#
+# LDAPv3
+# base <dc=example,dc=com> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+#### example.com
+# dn: dc=example,dc=com
+# objectClass: dcObject
+# objectClass: organization
+# dc: example
+# o: example
+
+#### users, example.com
+# dn: ou=users,dc=example,dc=com
+# objectClass: organizationalUnit
+# ou: users
+
+# ben, users, example.com
+dn: cn=ben,ou=users,dc=example,dc=com
+cn: Ben Alex
+sn: Alex
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+description: Add Ben new user
+uid: ben
+uidNumber: 1002
+gidNumber: 1002
+homeDirectory: /home/ben
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
