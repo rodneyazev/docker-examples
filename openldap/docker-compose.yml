@@ -10,32 +10,32 @@ services:
       - '389:389'
       - '636:636'
     environment:
+      LDAP_CONFIGURE_PPOLICY: yes
+      LDAP_PPOLICY_HASH_CLEARTEXT: yes
+      LDAP_PASSWORD_HASH: '{CLEARTEXT}'
       LDAP_ORGANISATION: My Example
       LDAP_DOMAIN: example.com
       LDAP_ROOT: 'dc=example,dc=com'
       LDAP_PORT_NUMBER: '389'
       LDAP_CONFIG_ADMIN_ENABLED: yes
-      #
       LDAP_ADMIN_USERNAME: admin
       LDAP_ADMIN_PASSWORD: admin
-      #
       LDAP_USERS: user01,user02
       LDAP_PASSWORDS: password1,password2
-      #
     volumes:
       - 'openldap_data:/bitnami/openldap/data'
       - './ldif:/bitnami/openldap/ldif'
-  phpldapadmin:
-    image: osixia/phpldapadmin:latest
-    container_name: phpldapadmin
-    hostname: "phpldapadmin"
-    environment:
-      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
-      PHPLDAPADMIN_HTTPS: "false"
-    ports:
-      - "8089:80"
-    depends_on:
-      - openldap
+#  phpldapadmin:
+#    image: osixia/phpldapadmin:latest
+#    container_name: phpldapadmin
+#    hostname: "phpldapadmin"
+#    environment:
+#      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+#      PHPLDAPADMIN_HTTPS: "false"
+#    ports:
+#      - "8089:80"
+#    depends_on:
+#      - openldap
 
 volumes:
   openldap_data:

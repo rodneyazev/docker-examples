@@ -16,20 +16,20 @@ docker exec openldap ldapadd -v -H ldap://localhost -c -D "cn=admin,dc=example,d
 
 <br>
 
-- Using Anonymous Bind
-
-```bash
-
-docker exec openldap ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn
-
-```
-<br>
-
 - Using Simple Bind
 
 ```bash
 
 docker exec openldap ldapsearch -x -H ldap://localhost -b dc=example,dc=com -D "cn=admin,dc=example,dc=com" -w admin
+
+```
+<br>
+
+- Using Anonymous Bind
+
+```bash
+
+docker exec openldap ldapsearch -x -LLL -H ldap:/// -b dc=example,dc=com dn
 
 ```
 <br>
