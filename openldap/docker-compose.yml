@@ -20,7 +20,7 @@ services:
       LDAP_USERS: user01,user02
       LDAP_PASSWORDS: password1,password2
     volumes:
-      - 'openldap_data:/bitnami/openldap/data'
+      - 'data:/bitnami/openldap/data'
       - './ldif:/bitnami/openldap/ldif'
   phpldapadmin:
     image: osixia/phpldapadmin:latest
@@ -35,5 +35,5 @@ services:
       - openldap
 
 volumes:
-  openldap_data:
+  data:
     driver: local
