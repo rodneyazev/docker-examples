@@ -2,6 +2,13 @@
 
 OpenLDAP docker example
 
+## phpLDAPadmin
+
+http://localhost:8089/
+
+- <b>Login DN</b>: cn=admin,dc=example,dc=com
+- <b>Password</b>: admin
+
 ## OpenLDAP - Useful Commands
 
 - Add new user / Import users.ldif
@@ -11,8 +18,6 @@ OpenLDAP docker example
 docker exec openldap ldapadd -v -H ldap://localhost -c -D "cn=admin,dc=example,dc=com" -w admin -f /bitnami/openldap/ldif/users.ldif
 
 ```
-<pre><em><strong>Username:</strong> ben     <strong>Password:</strong> benspassword </em>
-</pre>
 
 <br>
 
