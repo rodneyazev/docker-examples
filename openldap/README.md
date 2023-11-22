@@ -9,6 +9,10 @@ http://localhost:8089/
 - <b>Login DN</b>: cn=admin,dc=example,dc=com
 - <b>Password</b>: admin
 
+<p align="center">
+  <img src="https://i.imgur.com/bDqDgUG.png" width="400" alt="phpLDAPadmin Logo" />
+</p>
+
 ## OpenLDAP - Useful Commands
 
 - Add new user / Import users.ldif
