@@ -10,9 +10,6 @@ services:
       - '389:389'
       - '636:636'
     environment:
-      LDAP_CONFIGURE_PPOLICY: yes
-      LDAP_PPOLICY_HASH_CLEARTEXT: yes
-      LDAP_PASSWORD_HASH: '{CLEARTEXT}'
       LDAP_ORGANISATION: My Example
       LDAP_DOMAIN: example.com
       LDAP_ROOT: 'dc=example,dc=com'
