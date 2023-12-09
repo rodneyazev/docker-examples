@@ -1,14 +1,58 @@
-# DOCKER EXAMPLES
-Here you will find examples of docker containers.
+<p align="center">
+  <img src="https://i.imgur.com/z6SRxKv.jpg" width="400" alt="Docker Logo" />
+</p>
 
-If you need to know about **username or password**, you will find them in the **.env files.**
+# About  containers
 
-Do not hesitate to contact me if you face any trouble.
+### Users and passwords
 
-## Create a network for internal communication
+<em>Those that are not in the docker-compose.yml file will be in the .env files.</em>
 
+## - Network creation
+
+```bash
 docker network create my-network
+```
 
-## Some containers need the following configuration (e.g.: Sonarqube):
+## - Jenkins
+
+```bash
+# Admin password
+
+docker exec -it jenkins /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+```
+
+## - Sonarqube
+
+```bash
+# WSL Requirement
 
 sudo sysctl -w vm.max_map_count=262144
+```
+
+## - MongoDB (Authentication)
+
+<em>Click on TLS/SSL and change it to Off, if necessary.</em>
+
+
+## - Oracle
+
+```bash
+# SQL Developer
+
+User: system
+Password: Oracle_123
+SID: XE  (Uppercase)
+```
+
+## - Oracle
+
+```bash
+# PGAdmin
+
+Use host.docker.internal instead of localhost
+```
+
+
+## How access database via PGAdmin, etc:
+
