@@ -32,7 +32,7 @@ sudo sysctl -w vm.max_map_count=262144
 
 ## - MongoDB (Authentication)
 
-<em>Click on TLS/SSL and change it to Off, if necessary.</em>
+<em>Disable the TLS/SSL protocol if necessary.</em>
 
 
 ## - Oracle
