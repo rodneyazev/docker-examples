@@ -6,7 +6,7 @@
 
 ### Users and passwords
 
-<em>Passwords that are not in the docker-compose.yml file will be in the .env files.</em>
+<em>Passwords that are not in the docker-compose.yml file will be in the .env files within the same directory.</em>
 
 ## - Network creation
 
