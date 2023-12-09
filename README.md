@@ -6,7 +6,7 @@
 
 ### Users and passwords
 
-<em>Those that are not in the docker-compose.yml file will be in the .env files.</em>
+<em>Passwords that are not in the docker-compose.yml file will be in the .env files.</em>
 
 ## - Network creation
 
@@ -45,7 +45,7 @@ Password: Oracle_123
 SID: XE  (Uppercase)
 ```
 
-## - Oracle
+## - PostgreSQL
 
 ```bash
 # PGAdmin
