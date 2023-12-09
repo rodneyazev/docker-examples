@@ -48,7 +48,7 @@ SID: XE  (Uppercase)
 ## - PostgreSQL
 
 ```bash
-# PGAdmin
+# PGAdmin (Local)
 
 Use host.docker.internal instead of localhost
 ```
