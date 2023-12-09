@@ -52,7 +52,3 @@ SID: XE  (Uppercase)
 
 Use host.docker.internal instead of localhost
 ```
-
-
-## How access database via PGAdmin, etc:
-
