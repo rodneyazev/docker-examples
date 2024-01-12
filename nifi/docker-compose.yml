@@ -6,7 +6,7 @@ services:
     container_name: "nifi"
     hostname: "nifi"
     ports:
-      - "9090:8181"
+      - "9191:8181"
       # - "8443:8443"
     environment:
       NIFI_WEB_HTTP_PORT: 8181

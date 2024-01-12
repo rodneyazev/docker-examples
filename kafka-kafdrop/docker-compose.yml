@@ -1,14 +1,14 @@
 version: "3.9"
 services:
   kafdrop:
-    image: obsidiandynamics/kafdrop
+    image: obsidiandynamics/kafdrop:3.31.0
     container_name: "kafdrop"
     hostname: "kafdrop"
     ports:
       - "9090:9000"
     environment:
       KAFKA_BROKERCONNECT: "kafka:29092"
-      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+      JVM_OPTS: "-Xms32M -Xmx64M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication"
     networks:
       - my-network
     depends_on:
