@@ -30,6 +30,7 @@ services:
 networks:
   my-network:
       name: my-network
+      external: true
 
 volumes:
   database_repository:
