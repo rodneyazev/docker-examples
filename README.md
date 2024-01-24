@@ -14,6 +14,12 @@
 docker network create my-network
 ```
 
+## - Docker creation
+
+```bash
+docker-compose up -d
+```
+
 ## - Jenkins
 
 ```bash
