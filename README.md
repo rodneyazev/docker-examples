@@ -25,14 +25,15 @@ docker exec -it jenkins /bin/bash -c "cat /var/jenkins_home/secrets/initialAdmin
 ## - Sonarqube
 
 ```bash
-# WSL Requirement
-
-sudo sysctl -w vm.max_map_count=262144
 
 # Login / Authentication
 
 User: admin
 Password: admin
+
+# WSL Requirement (if needed)
+
+sudo sysctl -w vm.max_map_count=262144
 ```
 
 ## - MongoDB (Authentication)
@@ -56,4 +57,24 @@ SID: XE  (Uppercase)
 # PGAdmin (Local)
 
 Use host.docker.internal instead of localhost
+```
+
+## - RabbitMQ
+
+```bash
+
+# Login / Authentication
+
+User: rabbitmq
+Password: rabbitmq
+```
+
+## - Keycloak
+
+```bash
+
+# Login / Authentication
+
+User: admin
+Password: admin
 ```
