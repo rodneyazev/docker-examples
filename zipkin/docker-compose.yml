@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: "zipkin"
+    hostname: "zipkin"
+    environment:
+      - STORAGE_TYPE=mem
+    ports:
+      - "9411:9411"
+    networks:
+      - my-network
+networks:
+  my-network:
+      name: my-network
+      external: true
