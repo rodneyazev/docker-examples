@@ -3,7 +3,6 @@ services:
   prometheus:
     image: prom/prometheus:v2.35.0
     container_name: prometheus
-    restart: always
     ports:
       - "9090:9090"
     volumes:
@@ -22,6 +21,10 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=grafana
       - GF_SECURITY_ADMIN_PASSWORD=grafana
+      - GF_SERVER_DOMAIN=localhost
+      # Enabled for logging
+      - GF_LOG_MODE=console file
+      - GF_LOG_FILTERS=alerting.notifier.slack:debug alertmanager:debug ngalert:debug
     networks:
       - my-network
 networks:
