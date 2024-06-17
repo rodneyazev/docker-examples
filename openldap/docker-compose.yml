@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   openldap:
     image: bitnami/openldap:latest

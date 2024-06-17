@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   kafdrop:
     image: obsidiandynamics/kafdrop:3.31.0
