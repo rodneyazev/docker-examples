@@ -72,8 +72,9 @@ PGAdmin_password: admin
 
 ## - MySQL
 
+<em>If using DBeaver or any other IDE, don't forget to set allowPublicKeyRetrieval = TRUE </em>
+
 ```bash
-# If using DBeaver or any other IDE, don't forget to set allowPublicKeyRetrieval = TRUE
 Database: database
 Username: mysql
 Password: mysql
