@@ -111,3 +111,12 @@ Grafana: http://localhost:3000/
 Username: grafana
 Password: grafana
 ```
+
+## - Redmine
+
+Redmine: http://localhost:8080/
+
+```bash
+Username: admin
+Password: admin
+```
