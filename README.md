@@ -62,7 +62,20 @@ SID: XE  (Uppercase)
 
 ```bash
 # PGAdmin (Local)
-Use host.docker.internal instead of localhost
+# Use host.docker.internal instead of localhost
+Username: postgres
+Password: postgres
+Database: postgres
+PGAdmin_email: admin@admin.com
+PGAdmin_password: admin
+```
+
+## - MySQL
+
+```bash
+Database: database
+Username: mysql
+Password: mysql
 ```
 
 ## - RabbitMQ
@@ -93,6 +106,6 @@ Main endpoint: http://localhost:8080/actuator
 Grafana: http://localhost:3000/
 
 ```bash
-username: grafana
-password: grafana
+Username: grafana
+Password: grafana
 ```
