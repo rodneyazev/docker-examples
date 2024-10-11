@@ -120,3 +120,23 @@ Redmine: http://localhost:8080/
 Username: admin
 Password: admin
 ```
+
+## - Mantis Bug Tracker
+
+Mantis Bug Tracker: http://localhost:8089/
+
+<em>First steps (Pre-Installation Check):</em>
+
+```bash
+Hostname (for Database Server): db
+Username (for Database): mantis
+Password (for Database): mantis
+URL to your installation: **Remove any value**
+```
+
+http://localhost:8089/login_page.php
+
+```bash
+Login: administrator
+Password: root
+```

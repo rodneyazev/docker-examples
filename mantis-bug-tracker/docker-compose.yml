@@ -1,0 +1,33 @@
+services:
+  mantis:
+    image: xlrl/mantisbt
+    container_name: "mantis"
+    hostname: "mantis"
+    restart: always
+    ports:
+      - 8089:80
+    environment:
+      MANTIS_ENABLE_ADMIN: 1
+      # Set MASTER_SALT - Generate it by `cat /dev/urandom | head -c 64 | base64`
+      MASTER_SALT: UUogbqY2+zc1FMZhT8RI3l/PqkL3SMlM5+Q+Fi2wYbZjIenhbFIlVpIUNU7N3hHBdHl1/IRdbWDs3bkNufWcPQ==
+    #volumes:
+    #  - ./data/config/config_inc.php:/var/www/html/config/config_inc.php
+    links:
+      - db
+  db:
+    image: mysql:latest
+    container_name: "db"
+    hostname: "db"
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DATABASE}
+      MYSQL_USER: ${USERNAME}
+      MYSQL_PASSWORD: ${PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db:
