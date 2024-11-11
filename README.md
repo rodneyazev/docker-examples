@@ -140,3 +140,12 @@ http://localhost:8089/login_page.php
 Login: administrator
 Password: root
 ```
+
+## - Apache NiFi
+
+Redmine: https://localhost:8443/nifi
+
+```bash
+Username: admin
+Password: ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB
+```
