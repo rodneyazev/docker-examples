@@ -143,7 +143,7 @@ Password: root
 
 ## - Apache NiFi
 
-Redmine: https://localhost:8443/nifi
+https://localhost:8443/nifi
 
 ```bash
 Username: admin
