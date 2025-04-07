@@ -1,0 +1,23 @@
+services:
+  memcached:
+    image: memcached:latest
+    container_name: memcached
+    hostname: memcached
+    ports:
+      - "11211:11211"  # Default Memcached port
+    volumes:
+      - memcached_data:/tmp
+    environment:
+      - MEMCACHED_CACHE_SIZE=64  # Cache size in MB (default: 64)
+      - MEMCACHED_CONNECTIONS=1024  # Max connections (default: 1024)
+    restart: unless-stopped
+    networks:
+      - my-network
+
+volumes:
+  memcached_data:
+
+networks:
+  my-network:
+      name: my-network
+      external: true

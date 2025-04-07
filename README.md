@@ -88,6 +88,20 @@ User: rabbitmq
 Password: rabbitmq
 ```
 
+## - Redis
+
+```bash
+# Checkout
+docker exec redis redis-cli PING
+```
+
+## - Memcached
+
+```bash
+# Checkout
+telnet localhost 11211
+```
+
 ## - Keycloak
 
 ```bash
