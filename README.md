@@ -9,7 +9,9 @@
 <em>Passwords that are not in the docker-compose.yml file will be in the .env files within the same directory.</em>
 
 #### IMPORTANT
-In case of port conflict (e.g. 8080), configure the container port according to your needs.
+<em>In case of port conflict (e.g. 8080), configure the container port according to your needs.</em>
+
+Some containers take a while (~2-5 minutes) to initialize (like GitLab).
 
 ## - Docker
 
