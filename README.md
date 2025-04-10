@@ -33,6 +33,17 @@ docker-compose -f <docker-filename> up -d
 docker exec -it jenkins /bin/bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
 ```
 
+## - GitLab
+
+```bash
+# URLs
+GitLab: http://localhost:8080
+Runner: http://localhost:8080/admin/runners
+
+# Main user Login:
+user: root
+```
+
 ## - Sonarqube
 
 ```bash

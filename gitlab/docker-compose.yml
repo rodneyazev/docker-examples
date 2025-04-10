@@ -1,0 +1,42 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+        gitlab_rails['initial_root_password'] = 'Password123!'  # Change this!
+    ports:
+      - "8080:80"
+      - "2222:22"
+    volumes:
+      - ./gitlab/config:/etc/gitlab
+      - ./gitlab/logs:/var/log/gitlab
+      - ./gitlab/data:/var/opt/gitlab
+    restart: unless-stopped
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    hostname: gitlab-runner
+    depends_on:
+      - gitlab
+    environment:
+      # Pre-configured runner registration (no manual steps needed)
+      - REGISTER_NON_INTERACTIVE=true
+      - CI_SERVER_URL=http://gitlab/
+      - REGISTRATION_TOKEN=  # Leave empty (not used after GitLab 15.6)
+      - RUNNER_TOKEN=your_runner_auth_token_here  # From GitLab UI (Admin > Runners > New Runner)
+      - RUNNER_NAME=my-docker-runner
+      - RUNNER_EXECUTOR=docker
+      - DOCKER_IMAGE=alpine:latest
+      - DOCKER_NETWORK_MODE=gitlab_default  # Matches Compose network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./gitlab-runner/config:/etc/gitlab-runner
+    restart: unless-stopped
+
+networks:
+  default:
+    name: gitlab_default  # Explicit network name for DOCKER_NETWORK_MODE
