@@ -11,7 +11,7 @@
 #### IMPORTANT
 <em>In case of port conflict (e.g. 8080), configure the container port according to your needs.</em>
 
-Some containers take a while (~2-5 minutes) to initialize (like GitLab).
+<em>Some containers take a while (~2-5 minutes) to initialize (like GitLab).</em>
 
 ## - Docker
 
