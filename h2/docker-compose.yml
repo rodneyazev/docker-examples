@@ -1,0 +1,24 @@
+services:
+  h2-database:
+    image: oscarfonts/h2
+    container_name: h2-server
+    hostname: h2-server
+    environment:
+      - H2_OPTIONS=-ifNotExists -web -webAllowOthers -webPort 81 # Auto-create DB if missing
+      - JAVA_OPTS=-Xmx512m       # Limit memory usage
+    volumes:
+      - h2-data:/opt/h2-data     # Persistent storage
+    ports:
+      - "1521:1521"              # JDBC port (default)
+      - "8181:81"              # Web Console port
+    restart: unless-stopped
+    networks:
+      - my-network
+
+networks:
+  my-network:
+      name: my-network
+      external: true
+
+volumes:
+  h2-data:  # Named volume for database files

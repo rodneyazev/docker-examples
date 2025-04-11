@@ -96,6 +96,16 @@ Username: mysql
 Password: mysql
 ```
 
+## - H2
+
+```bash
+# URL
+http://localhost:8181/
+
+Username: sa
+Password: <empty>
+```
+
 ## - RabbitMQ
 
 ```bash
