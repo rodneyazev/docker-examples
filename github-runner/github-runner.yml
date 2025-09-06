@@ -1,0 +1,24 @@
+services:
+  github-runner:
+    image: myoung34/github-runner:latest
+    container_name: github-actions-runner
+    restart: unless-stopped
+    environment:
+      - RUNNER_NAME_PREFIX=runner
+      - RUNNER_WORKDIR=/tmp/runner-work
+      - ACCESS_TOKEN=Your GitHub Token Here
+      - REPO_URL=Your Repository URL Here
+      - LABELS=docker,self-hosted
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - runner-data:/tmp/runner-work
+    networks:
+      - my-network
+
+volumes:
+  runner-data:
+
+networks:
+  my-network:
+      name: my-network
+      external: true

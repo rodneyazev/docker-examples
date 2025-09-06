@@ -1,0 +1,32 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:  # Allows manual triggering
+  push:
+    branches: [ main ]
+
+jobs:
+  test-runner:
+    runs-on: self-hosted  # This will use your self-hosted runner
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Test Docker
+      run: |
+        echo "Hello from self-hosted runner!"
+        docker --version
+        whoami
+        uname -a
+
+    - name: Test environment
+      run: |
+        echo "Running on: $(hostname)"
+        echo "Working directory: $(pwd)"
+        ls -la
+
+    - name: Create test file
+      run: |
+        echo "This file was created by the self-hosted runner" > test-file.txt
+        cat test-file.txt
