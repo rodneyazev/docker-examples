@@ -3,6 +3,11 @@
 - ACCESS_TOKEN = {Your GitHub Token Here}
 - REPO_URL = {Your Repository URL}
 
+#### GitHub Actions file example:
+```bash
+.github/workflows/test-runner.yml
+```
+
 ### Example:
 <img src="img/github-runner-1.png" />
 
